@@ -1,0 +1,34 @@
+<style>
+table {
+  border-collapse: collapse;
+  border: solid 2px orange;
+}
+table th {
+  padding: 10px;
+  color: #FF9800;
+  background: #fff5e5;
+}
+
+table td {
+  padding: 3px 10px;
+
+}
+</style>
+<div> 从 {{ total_count }} 选取 {{ pick_number_count }} 个数字，排列组合结果 </div>
+<div> 目标值： {{ target_number }}</div>
+<table border="1">
+<thead>
+    <tr>
+        <th>序号</th>
+        <th>组合</th>
+        <th>和</th>
+    </tr>
+</thead>
+{% for num in numbers %}
+    <tr>
+        <td> {{ loop.index }} </td>
+        <td> {{ num[0] }}</td>
+        <td> {{ num[1] }}</td>
+    </tr>
+{% endfor %}
+</table>

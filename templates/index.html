@@ -1,0 +1,33 @@
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('form').submit(function(){
+        var data = $('form').serializeArray();
+    }
+    var parseJson = function(data) {
+      var returnJson = {};
+      for (idx = 0; idx < data.length; idx++) {
+        returnJson[data[idx].name] = data[idx].value
+      }
+      return returnJson;
+    }
+</script>
+<div> N 个数字 选 M 个 排列组合，求和</div>
+<form action="/calculate" id="form" method="get">
+    <div>
+        <label>选取多少个数字</label>
+        <br/>
+        <input type="text" id="pick_number_count" name="pick_number_count">
+    </div>
+    <div>
+        <label>目标数字</label>
+        <br/>
+        <input type="text" id="target_number" name="target_number">
+    </div>
+    <div>
+        <label>数字列表</label>
+    </div>
+    <div>
+        <textarea id="numbers" name="numbers"></textarea>
+    </div>
+    <input type="submit" value="提交" />
+</form>
